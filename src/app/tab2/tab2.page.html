@@ -1,17 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-my-header name="Лабораторна робота №1"></app-my-header>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Завдання №2
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="p_background">На заданому проміжку чисел [a, b] знайдіть добуток чисел,
+        кратних 6. Потрібно вивести як самі числа так і результати обрахунку.</p>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+            <ion-item>
+              <ion-label position="stacked">a:</ion-label>
+              <ion-input type="number" id="a" value="1" #Inputa></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="stacked">b:</ion-label>
+              <ion-input type="number" id="b" value="2" #Inputb></ion-input>
+            </ion-item>
+
+      <ion-button expand="block" (click)="calculate(Inputa.value, Inputb.value)">Порахувати</ion-button>
+
+      <ion-item>
+        <p> Результат: {{d}}</p>
+      </ion-item>
+
+      <ion-item>
+        <p>Числа, кратні 6: {{divisibleBySix}}</p> 
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

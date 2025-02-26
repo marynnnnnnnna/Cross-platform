@@ -1,17 +1,34 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-my-header name="Лабораторна робота №1"></app-my-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Завдання №3
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="p_background">Згенерувати матрицю розміром NxN. Виокремити за допомогою кольору усі парні додатні
+        елементи, якщо їх кількість більша за 10.</p>
+      <ion-item>
+        <ion-label position="stacked">N:</ion-label>
+        <ion-input type="number" id="a" value="3" #Inputn></ion-input>
+      </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <ion-button expand="block" (click)="calculate(Inputn.value)">Згенерувати матрицю </ion-button>
+      <ion-item *ngIf="message">
+        <p>{{ message }}</p>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row *ngFor="let i of a">
+            <ion-col *ngFor="let j of i" [ngStyle]="{backgroundColor: getColor(j)}">
+              {{j}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
