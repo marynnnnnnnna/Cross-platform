@@ -1,3 +1,9 @@
+<ion-button (click)="addFormShow()">Додати товари</ion-button>
+<app-add-product-component
+  *ngIf="showAddForm"
+    (productAdd)="addProduct($event)"
+  ></app-add-product-component>
+  
 <ion-card *ngFor="let product of ProductReadService.products">
   <ion-card-header>
     <ion-card-title>{{ product.getName() }}</ion-card-title>

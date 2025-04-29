@@ -12,14 +12,14 @@ export class ProductFactory {
                     data.name,
                     data.author,
                     data.year,
-                    data.pages,
+                    data.page,
                     data.price
                 );
             case ProductType[1]:
                 return new Toy(
                     data.id,
                     data.name,
-                    data.category,
+                    data.category1,
                     data.year,
                     data.age,
                     data.price
@@ -28,7 +28,7 @@ export class ProductFactory {
                 return new Clothes(
                     data.id,
                     data.name,
-                    data.category,
+                    data.category2,
                     data.season,
                     data.height,
                     data.price

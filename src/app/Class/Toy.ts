@@ -1,12 +1,12 @@
 import { Product } from "./Product";
 export class Toy extends Product{
-    private category: string = '';
+    private category1: string = '';
     private age: number = 0;
     private year: number;
     constructor(
         id:number,
         name:string,
-        category:string,
+        category1:string,
         year:number,
         age:number,
         price:number
@@ -15,18 +15,18 @@ export class Toy extends Product{
         if (year <= 0) throw new Error('year <= 0');
         this.year = year;
         if (age < 0) throw new Error('age < 0');
-        this.category = category;
+        this.category1 = category1;
         this.age = age;
     }
     override getDetails(): string[]{
         let details = [];
-        details.push('Категорія:' + this.category);
+        details.push('Категорія:' + this.category1);
         details.push('Рік випуску:' + this.year);
         details.push('Вік:' + this.age);
         return details;
     }
     getCategory(): string {
-        return this.category
+        return this.category1
     }
     getYear(): number {
         return this.year

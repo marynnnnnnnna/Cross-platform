@@ -1,0 +1,139 @@
+<form [formGroup] ="productForm" (ngSubmit)="onSubmit()">
+  <!-- Загальні поля -->
+  <ion-card>  <!---->
+    <ion-card-header> <!---->
+      <ion-card-title>Додати товар</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="body"> <!---->
+      <ion-item>
+        <ion-input
+          label="Назва"
+          formControlName="name"
+          labelPlacement="floating"
+          errorText="Назва повинна бути більше за 3 символи"
+          class="custom">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Вартість"
+          formControlName="price"
+          type="number"
+          labelPlacement="floating"
+          errorText="Ціна повинна бути більше за 0"
+          class="custom">
+        </ion-input>
+      </ion-item>
+      <!-- Вибір типу книги, іграшки, одягу -->
+      <ion-segment (ionChange)="onTypeChange($event.detail.value)">
+        <ion-segment-button value="Book" content-id="Book">
+          <ion-label>Book</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Toy" content-id="Toy">
+          <ion-label>Toy</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Clothes" content-id="Clothes">
+          <ion-label>Clothes</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <ion-segment-view>
+        <ion-segment-content id="Book">
+          <ion-item>
+            <ion-input
+              label="Автор"
+              formControlName="author"
+              labelPlacement="floating"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              label="Рік видання"
+              formControlName="year"
+              type="number"
+              labelPlacement="floating"
+              errorText="Рік повинен бути більшим за 1000"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              label="Кількість сторінок"
+              formControlName="page"
+              type="number"
+              labelPlacement="floating"
+              errorText="Кількість повинна бути більшою за 4"
+              class="custom">
+            </ion-input>
+          </ion-item>
+        </ion-segment-content>
+        <!-- Поля для іграшки-->
+        <ion-segment-content id="Toy">
+          <ion-item>
+            <ion-input *ngIf="currentType===types[1]"
+              label="Категорія"
+              formControlName="category1"
+              labelPlacement="floating"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input *ngIf="currentType===types[1]"
+              label="Рік випуску"
+              formControlName="year"
+              type="number"
+              labelPlacement="floating"
+              errorText="Рік повинен бути більшим за 0"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input *ngIf="currentType===types[1]"
+              label="Вік"
+              formControlName="age"
+              type="number"
+              labelPlacement="floating"
+              errorText="Вік повинен бути більшим за 0"
+              class="custom">
+            </ion-input>
+          </ion-item>
+        </ion-segment-content>
+        <!-- Поля для одягу-->
+        <ion-segment-content id="Clothes">
+          <ion-item>
+            <ion-input *ngIf="currentType===types[2]"
+              label="Тип одягу"
+              formControlName="category2"
+              labelPlacement="floating"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input *ngIf="currentType===types[2]"
+              label="Пора року"
+              formControlName="season"
+              labelPlacement="floating"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input *ngIf="currentType===types[2]"
+              label="Зріст"
+              formControlName="height"
+              type="number"
+              labelPlacement="floating"
+              errorText="Зріст повинен бути більшим за 0"
+              class="custom">
+            </ion-input>
+          </ion-item>
+        </ion-segment-content>
+      </ion-segment-view>
+    </ion-card-content>
+  </ion-card>
+  <ion-button
+  type="submit"
+  (click)="onSubmit()"
+  [disabled]="productForm.invalid"
+  >Submit</ion-button>
+</form>
