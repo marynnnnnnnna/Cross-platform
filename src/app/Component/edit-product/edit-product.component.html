@@ -1,0 +1,124 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <!-- Згальні поля -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Редагування товару</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input 
+        label="Назва" 
+        labelPlacement="floating"    
+        errorText="Назва повинна бути більше за 3 символи"      
+        class="custom"
+        [value]="product.getName()"          
+        formControlName="name">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input 
+        label="Вартість" 
+        type="number" 
+        labelPlacement="floating"
+        errorText="Ціна повинна бути більше за 0"
+        class="custom"
+        [value]="product.getPrice()"
+        formControlName="price">
+        </ion-input>
+      </ion-item>
+      <!-- Якщо Book-->
+      <fieldset *ngIf="product.getType() === types[0]">
+        <ion-item>
+          <ion-input 
+          label="Автор" 
+          labelPlacement="floating"
+          class="custom"
+          formControlName="author">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+          label="Рік видання" 
+          type="number" 
+          labelPlacement="floating"
+          errorText="Рік повинен бути більшим за 1000"
+          class="custom"
+          formControlName="year">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+          label="Кількість сторінок" 
+          type="number" 
+          labelPlacement="floating"
+          errorText="Кількість сторінок повинна бути більше за 4"
+          class="custom"
+          formControlName="page">
+          </ion-input>
+        </ion-item>
+      </fieldset>
+
+      <!-- Якщо Toy -->
+      <fieldset *ngIf="product.getType() === types[1]">
+        <ion-item>
+          <ion-input
+            label="Категорія"
+            formControlName="category1"
+            labelPlacement="floating"
+            class="custom">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Рік випуску"
+            formControlName="year"
+            type="number"
+            labelPlacement="floating"
+            errorText="Рік повинен бути більшим за 0"
+            class="custom">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Вік"
+            formControlName="age"
+            type="number"
+            labelPlacement="floating"
+            errorText="Вік повинен бути більшим за 0"
+            class="custom">
+          </ion-input>
+        </ion-item>
+      </fieldset>
+      <!-- Якщо Clothes -->
+      <fieldset *ngIf="product.getType() === types[2]">
+        <ion-item>
+          <ion-input
+            label="Тип одягу"
+            formControlName="category2"
+            labelPlacement="floating"
+            class="custom">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Пора року"
+            formControlName="season"
+            labelPlacement="floating"
+            class="custom">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Зріст"
+            formControlName="height"
+            type="number"
+            labelPlacement="floating"
+            errorText="Зріст повинен бути більшим за 0"
+            class="custom">
+          </ion-input>
+        </ion-item>
+      </fieldset>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="submit" (click)="onSubmit()">Submit</ion-button>
+</form>

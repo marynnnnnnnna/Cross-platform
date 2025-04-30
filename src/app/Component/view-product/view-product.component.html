@@ -4,7 +4,7 @@
     (productAdd)="addProduct($event)"
   ></app-add-product-component>
   
-<ion-card *ngFor="let product of ProductReadService.products">
+<ion-card *ngFor="let product of ProductReadService.products; index as i">
   <ion-card-header>
     <ion-card-title>{{ product.getName() }}</ion-card-title>
     <ion-card-subtitle>{{ product.getType() }}</ion-card-subtitle>
@@ -17,5 +17,10 @@
       <ion-label>Ціна {{ product.getPrice() }}</ion-label>
     </ion-item>
   </ion-card-content>
-  <ion-button>Купити</ion-button>
+  <ion-button (click)="editFormShow(i)">Редагувати</ion-button>
+  <app-edit-product
+    *ngIf="showEditForm && i == editFormnumber"
+    (productEdit)="editProduct($event, i)"
+    [product]="product">
+  </app-edit-product>
 </ion-card>

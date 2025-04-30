@@ -1,7 +1,6 @@
 import { ProductType } from './../../Class/ProductType';
 import { ProductReadService } from './../../Service/product-read.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormArray, FormsModule, ReactiveFormsModule, FormBuilder,
@@ -15,8 +14,7 @@ import { formConstructor } from 'src/app/forms/formconstructor';
   templateUrl: './add-product-component.component.html',
   styleUrls: ['./add-product-component.component.scss'],
   imports: [IonicModule, CommonModule, 
-     
-     FormsModule, ReactiveFormsModule, 
+    FormsModule, ReactiveFormsModule, 
     
   ], // Додаємо IonicModule
 })
@@ -30,7 +28,6 @@ export class AddProductComponentComponent  implements OnInit {
     this.productForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       price: ['', [Validators.required, Validators.min(0)]],
-      category1: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
   onTypeChange(type:any):void{
