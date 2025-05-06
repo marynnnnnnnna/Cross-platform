@@ -6,11 +6,12 @@ import { IonicModule } from '@ionic/angular';
 import { AddProductComponentComponent } from "../add-product-component/add-product-component.component";
 import { EditProductComponent } from "../edit-product/edit-product.component";
 import { ProductType } from 'src/app/Class/ProductType';
+import { FilterComponent } from '../filter/filter.component';
 @Component({
   selector: 'app-view-product',
   templateUrl: './view-product.component.html',
   styleUrls: ['./view-product.component.scss'],
-  imports: [IonicModule, CommonModule, AddProductComponentComponent, EditProductComponent], // Додаємо IonicModule
+  imports: [IonicModule, CommonModule, AddProductComponentComponent, EditProductComponent, FilterComponent], // Додаємо IonicModule
 })
 export class ViewProductComponent  implements OnInit {
   constructor(public ProductReadService: ProductReadService){}

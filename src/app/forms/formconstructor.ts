@@ -18,6 +18,9 @@ export function formConstructor(
         'category2',
         'season',
         'height',
+        'country',
+        'zone',
+        'age1',
     ];
     controlsToRemove.forEach((control)=>{
         if (productForm.contains(control)){
@@ -39,5 +42,10 @@ export function formConstructor(
         productForm.addControl('category2', fb.control('', Validators.required));
         productForm.addControl('season', fb.control('', Validators.required));
         productForm.addControl('height', fb.control('', [Validators.required, heightValidator]));
+    }
+    else if (type == ProductType[3]) {
+        productForm.addControl('country', fb.control('', Validators.required));
+        productForm.addControl('zone', fb.control('', Validators.required));
+        productForm.addControl('age1', fb.control('', [Validators.required, ageValidator]));
     }
 }

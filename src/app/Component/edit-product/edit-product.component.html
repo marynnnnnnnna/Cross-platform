@@ -118,6 +118,35 @@
           </ion-input>
         </ion-item>
       </fieldset>
+      <!-- Якщо gigiena -->
+      <fieldset *ngIf="product.getType() === types[3]">
+        <ion-item>
+          <ion-input
+            label="Країна походження"
+            formControlName="country"
+            labelPlacement="floating"
+            class="custom">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Зона нанесення"
+            formControlName="zone"
+            labelPlacement="floating"
+            class="custom">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Вік"
+            formControlName="age1"
+            type="number"
+            labelPlacement="floating"
+            errorText="Вік повинен бути більшим за 0"
+            class="custom">
+          </ion-input>
+        </ion-item>
+      </fieldset>
     </ion-card-content>
   </ion-card>
   <ion-button type="submit" (click)="onSubmit()">Submit</ion-button>

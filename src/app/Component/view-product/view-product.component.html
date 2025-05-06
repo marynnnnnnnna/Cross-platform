@@ -1,9 +1,15 @@
+<app-filter></app-filter>
+<ion-item>
+  <ion-toolbar>
+    <ion-title>Перегляд усіх товарів</ion-title>
+  </ion-toolbar>
+</ion-item>
 <ion-button (click)="addFormShow()">Додати товари</ion-button>
 <app-add-product-component
   *ngIf="showAddForm"
     (productAdd)="addProduct($event)"
   ></app-add-product-component>
-  
+
 <ion-card *ngFor="let product of ProductReadService.products; index as i">
   <ion-card-header>
     <ion-card-title>{{ product.getName() }}</ion-card-title>

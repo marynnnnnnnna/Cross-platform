@@ -1,0 +1,23 @@
+<ion-item>
+  <ion-toolbar>
+    <ion-title>Перегляд категорій</ion-title>
+  </ion-toolbar>
+</ion-item>
+<ion-item>
+  <ion-item>Поточна категорія:</ion-item>
+  <ion-label>{{type}}</ion-label> 
+  <ion-button (click)="nextType()">Наступна категорія</ion-button>
+</ion-item>
+<ion-card *ngFor="let product of productService.searchProducts; let j = index">
+  <ion-card-header>
+    <ion-card-title>{{product.getName()}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item *ngFor="let details of product.getDetails()">
+      <ion-label>{{details}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label> Ціна {{product.getPrice()}}</ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

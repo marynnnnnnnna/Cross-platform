@@ -37,6 +37,9 @@
           <ion-label>Clothes</ion-label>
         </ion-segment-button>
       </ion-segment>
+      <ion-segment-button value="Gigiena" content-id="Gigiena">
+        <ion-label>Book</ion-label>
+      </ion-segment-button>
       <ion-segment-view>
         <ion-segment-content id="Book">
           <ion-item>
@@ -124,6 +127,35 @@
               type="number"
               labelPlacement="floating"
               errorText="Зріст повинен бути більшим за 0"
+              class="custom">
+            </ion-input>
+          </ion-item>
+        </ion-segment-content>
+        <!-- Поля для гігєни-->
+        <ion-segment-content id="Gigiena">
+          <ion-item>
+            <ion-input *ngIf="currentType===types[3]"
+              label="Країна походження"
+              formControlName="country"
+              labelPlacement="floating"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input *ngIf="currentType===types[3]"
+              label="Зона нанесення"
+              formControlName="zone"
+              labelPlacement="floating"
+              class="custom">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input *ngIf="currentType===types[3]"
+              label="Вік"
+              formControlName="age1"
+              type="number"
+              labelPlacement="floating"
+              errorText="Вік повинен бути більшим за 0"
               class="custom">
             </ion-input>
           </ion-item>
