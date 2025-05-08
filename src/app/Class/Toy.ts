@@ -4,7 +4,7 @@ export class Toy extends Product{
     private age: number = 0;
     private year: number;
     constructor(
-        id:number,
+        id:string,
         name:string,
         category1:string,
         year:number,

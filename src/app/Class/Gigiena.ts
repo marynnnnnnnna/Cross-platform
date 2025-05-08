@@ -4,7 +4,7 @@ export class Gigiena extends Product{
     private zone: string = '';
     private age1: number;
     constructor(
-        id:number,
+        id:string,
         name:string,
         country:string,
         zone:string,

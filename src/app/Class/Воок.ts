@@ -4,7 +4,7 @@ export class Book extends Product{
     private page: number = 0;
     private year: number;
     constructor(
-        id:number,
+        id:string,
         name:string,
         author:string,
         year:number,

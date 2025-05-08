@@ -4,7 +4,7 @@ export class Clothes extends Product{
     private season: string = '';
     private height: number;
     constructor(
-        id:number,
+        id:string,
         name:string,
         category2:string,
         season:string,

@@ -1,0 +1,86 @@
+{
+    "products": {
+        "productId1":{
+            "id": 1,
+            "type": "Book",
+            "name": "Володар Перснів",
+            "author": "Дж. Р. Р. Толкін",
+            "year": 1954,
+            "page": 423,
+            "price": 399
+        },
+        "productId2":{
+            "id": 2,
+            "type": "Toy",
+            "name": "LEGO Super Mario",
+            "category1": "Конструктор",
+            "year": 2022,
+            "age": 6,
+            "price": 899
+        },
+          "productId3":{
+            "id": 3,
+            "type": "Clothes",
+            "name": "Куртка",
+            "category2": "Верхній одяг",
+            "season": "Зима",
+            "height": 170,
+            "price": 1799
+        },
+          "productId4":{
+            "id": 4,
+            "type": "Book",
+            "name": "Виховальні казки",
+            "author": "Роузі Бенкс",
+            "year": 7,
+            "page": 160,
+            "price": 235
+        },
+          "productId5":{
+            "id": 5,
+            "type": "Toy",
+            "name": "Ведмедик",
+            "category1": "М'які іграшки",
+            "year": 2023,
+            "age": 3,
+            "price": 499
+        },
+          "productId6":{
+            "id": 6,
+            "type": "Clothes",
+            "name": "Футболка",
+            "category2": "На кожен день",
+            "season": "Літо",
+            "height": 139,
+            "price": 299
+        },
+          "productId7":{
+            "id": 7,
+            "type": "Gigiena",
+            "name": "Шампунь",
+            "country": "Корея",
+            "zone": "Голова",
+            "age1": 5,
+            "price": 139
+        },
+          "productId8":{
+            "id": 8,
+            "type": "Gigiena",
+            "name": "Крем",
+            "country": "Польща",
+            "zone": "Для всього тіла",
+            "age1": 3,
+            "price": 159
+        },
+          "productId9":{
+            "id": 9,
+            "type": "Gigiena",
+            "name": "Зубна паста",
+            "country": "Україна",
+            "zone": "Ротова порожнина",
+            "age1": 1,
+            "price": 99
+        }
+    }
+    
+}
